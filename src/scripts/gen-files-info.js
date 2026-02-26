@@ -5,6 +5,7 @@ const path = require('path');
 function main() {
   const scanDir = 'public/filesystem';
   const outputFile = 'public/filesinfo.json';
+  const updateRecord = 'public/update';
   
   console.log(`🔍 扫描目录: ${scanDir}`);
   
@@ -46,6 +47,8 @@ function main() {
   
   // 写入简化的 JSON
   fs.writeFileSync(outputFile, JSON.stringify(files, null, 2));
+  // 写入更新时间
+  fs.writeFileSync(updateRecord, new Date().toLocaleString());
   console.log(`📁 文件列表已保存到: ${outputFile}`);
   
   // 预览

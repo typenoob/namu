@@ -10,6 +10,7 @@ type FileInfo = {
 };
 
 export default function Page() {
+  const [time, setTime] = useState<string | null>(null);
   const [files, setFiles] = useState<FileInfo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -19,27 +20,24 @@ export default function Page() {
       try {
         // 从 public 目录读取 files.json
         const response = await fetch('/filesinfo.json', {
-          // 添加缓存控制（可选）
           cache: 'no-store', // 每次都重新获取
-          // 或者使用默认缓存：'default'
+        });
+        const update_resp = await fetch('/update', {
+          cache: 'no-store', // 每次都重新获取
         });
         
-        if (!response.ok) {
+        if (!response.ok || !update_resp.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const data = await response.json();
+        const update_time = await update_resp.text();
         setFiles(data);
+        setTime(update_time);
         setError(null);
       } catch (err) {
         console.error('Failed to load files:', err);
         setError('无法加载文件列表');
-        
-        // 可以设置回退数据
-        setFiles([
-          { name: 'dists/', size: null, date: '2026-01-10 19:03', isDirectory: true },
-          { name: 'doc/', size: null, date: '2026-02-26 09:53', isDirectory: true },
-        ]);
       } finally {
         setLoading(false);
       }
@@ -93,7 +91,7 @@ export default function Page() {
     <div className="container mx-auto p-4 font-mono text-sm">
       <h1 className="text-xl font-bold mb-2 text-gray-800">Index of /filesystem/</h1>
       <p className="text-gray-500 text-xs mb-4">
-        Generated at {new Date().toLocaleString()}
+        Updated at {time}
       </p>
       
       <div className="overflow-x-auto border border-gray-300 rounded">
