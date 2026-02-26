@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "node ./src/scripts/gen-files-info.js && next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+    "format": "npx @biomejs/biome format --write"
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.2.4",
