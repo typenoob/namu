@@ -1,0 +1,20 @@
+[
+  {
+    "name": "sub",
+    "isDirectory": true,
+    "size": null,
+    "date": "2026-02-26 16:55"
+  },
+  {
+    "name": "1.txt",
+    "isDirectory": false,
+    "size": 1,
+    "date": "2026-02-26 16:13"
+  },
+  {
+    "name": "2.txt",
+    "isDirectory": false,
+    "size": 1,
+    "date": "2026-02-26 16:12"
+  }
+]
