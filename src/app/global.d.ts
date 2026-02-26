@@ -1,3 +1,3 @@
 declare interface Window {
-  Module?: EmscriptenModule
+	Module?: EmscriptenModule;
 }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- 圆形背景 -->
+  <circle cx="100" cy="100" r="98" fill="white" stroke="#4CAF50" stroke-width="2"/>
+  
+  <!-- 简约树形 -->
+  <path d="M100 150 L100 90 Q60 90, 80 70 Q50 70, 70 50 Q40 50, 60 30 Q100 20, 140 30 Q160 50, 130 50 Q150 70, 120 70 Q140 90, 100 90 Z" 
+        fill="#4CAF50" stroke="#388E3C" stroke-width="1"/>
+  
+  <!-- 简约飞鸟 -->
+  <path d="M130 80 Q150 60, 170 80 Q160 100, 140 90 Q145 85, 130 80 Z" 
+        fill="#FF9800" stroke="#F57C00" stroke-width="1"/>
+  <circle cx="160" cy="80" r="2" fill="#212121"/>
+</svg>

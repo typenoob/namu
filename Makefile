@@ -1,6 +1,6 @@
 # Makefile
 CC = emcc
-CFLAGS = --use-port=sdl3
+CFLAGS = --use-port=sdl3 -s EXIT_RUNTIME=1
 SRC_DIR = src/games
 DIST_DIR = public
 
