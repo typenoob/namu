@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build": "node ./src/scripts/gen-files-info.js && next build",
 		"start": "next start",
 		"lint": "next lint"
 	},
